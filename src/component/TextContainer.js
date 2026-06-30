@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 
 
 export default function TextContainer(props) {
-    const [text, setText] = useState('Enter text here');
+    const [text, setText] = useState('');
     const handleUpClick = ()=>{
         console.log("Uppercase was clicked: " +  text);
         let newText = text.toUpperCase();
@@ -54,7 +54,7 @@ const RemoveExtraSpace= ()=>{
             <h1><b>{props.heading}</b></h1>
             <div className="mb-3">
                 <label htmlFor="mybox" className="form-label" align="centre"><b>Text Container</b> </label>
-                <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor: props.mode==='dark'?'#555454':'white', color: props.mode==='dark'?'white':'#042743'}}id="mybox" rows="8"></textarea>
+                <textarea className="form-control" placeholder='Enter Text Here' onChange={handleOnChange} style={{backgroundColor: props.mode==='dark'?'#555454':'white', color: props.mode==='dark'?'white':'#042743'}}id="mybox" rows="8"></textarea>
             </div>  
             <button disabled={text.length===0} className="btn btn-primary mx-2 my-1"  onClick={handleUpClick}>Convert to Uppercase</button>
             <button disabled={text.length===0} className="btn btn-primary " onClick={handleclearClick}>Clear All</button>
